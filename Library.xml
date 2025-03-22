@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Library>
+    <book id="1234">
+        <author>Stephen King</author>
+        <title>The Stand</title>
+    </book>
+    <book id="5678">
+        <author>Robert Jordan</author>
+        <title>The Eye of the World</title>
+    </book>
+</Library>

@@ -24,6 +24,12 @@
       <artifactId>javafx-fxml</artifactId>
       <version>21</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.w3c/dom -->
+    <dependency>
+      <groupId>org.w3c</groupId>
+      <artifactId>dom</artifactId>
+      <version>2.3.0-jaxb-1.0.6</version>
+    </dependency>
 
 <dependency>
       <groupId>org.junit.jupiter</groupId>
