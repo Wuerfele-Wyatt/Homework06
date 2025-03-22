@@ -5,29 +5,36 @@
 
 <VBox alignment="CENTER" spacing="30.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.missouriwestern.wwuerfele.homework06.HelloController">
 
-  <!--<Button onAction="#onButtonClick">Click Me</Button>
-  <HBox alignment="CENTER">
-    <Label prefHeight="83.0" prefWidth="42.0" style="-fx-font-size: 70px;" text="🂠" />
-    <Text text="No Clicks so far."  fx:id="clickMessage" /> -->
-
-  <!--ENEMY PLAYERS "WAR" PILE"-->
-  <HBox alignment = "CENTER" spacing = "10.0">
-</HBox>
-
-  <!--ENEMY PLAYERS "ATTACK" PILE"-->
-  <HBox alignment = "CENTER" spacing = "10.0">
-</HBox>
-
-  <HBox alignment = "CENTER" spacing = "10.0">
-    <Button>Attack!</Button>
+  <HBox fx:id="enemyCardsRemaining" alignment="CENTER" spacing="100.0">
+    <Label text="Cards Remaining: 26"/>
   </HBox>
 
-  <!--USERS "ATTACK" PILE"-->
-  <HBox alignment = "CENTER" spacing = "10.0">
-</HBox>
+  <!--ENEMY "WAR" PILE-->
+  <HBox alignment="CENTER" spacing="10.0">
+    <Label text="🂠" style="-fx-font-size: 70px"/>
+  </HBox>
 
-  <!--USERS "WAR" PILE"-->
-  <HBox alignment = "CENTER" spacing = "10.0">
-</HBox>
+  <!--ENEMY "ATTACK" PILE-->
+  <HBox fx:id="enemyAttackPile" alignment="CENTER" spacing="10.0">
+    <Label text="🂠" style="-fx-font-size: 70px"/>
+  </HBox>
+
+  <HBox alignment="CENTER" spacing="10.0">
+    <Button onAction="#onButtonClick">Attack!</Button>
+  </HBox>
+
+  <!--PLAYER "ATTACK" PILE-->
+  <HBox fx:id="playerAttackPile" alignment="CENTER" spacing="10.0">
+    <Label text="🂠" style="-fx-font-size: 70px"/>
+  </HBox>
+
+  <!--PLAYER "WAR" PILE-->
+  <HBox alignment="CENTER" spacing="10.0">
+    <Label text="🂠" style="-fx-font-size: 70px"/>
+  </HBox>
+
+  <HBox fx:id="playerCardsRemaining" alignment="CENTER" spacing="100.0">
+    <Label text="Cards Remaining: 26"/>
+  </HBox>
 
 </VBox>

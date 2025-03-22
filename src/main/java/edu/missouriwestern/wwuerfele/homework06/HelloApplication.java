@@ -12,6 +12,8 @@ import java.util.Random;
 
 
 public class HelloApplication extends Application {
+    protected static ArrayList<Card> playerDeck = new ArrayList<>();
+    protected static ArrayList<Card> enemyDeck = new ArrayList();
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
@@ -22,8 +24,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        ArrayList<Card> playerDeck = new ArrayList<>();
-        ArrayList<Card> enemyDeck = new ArrayList();
         assignCards(playerDeck, enemyDeck);
         launch();
 
@@ -131,19 +131,19 @@ public class HelloApplication extends Application {
         deck.add(JD);
         deck.add(JC);
 
-        Card QS = new Card("\uD83C\uDCAC", "Queen of Spades", 12);
-        Card QH = new Card("\uD83C\uDCBC", "Queen of Hearts", 12);
-        Card QD = new Card("\uD83C\uDCCC", "Queen of Diamonds", 12);
-        Card QC = new Card("\uD83C\uDCDC", "Queen of Clubs", 12);
+        Card QS = new Card("\uD83C\uDCAD", "Queen of Spades", 12);
+        Card QH = new Card("\uD83C\uDCBD", "Queen of Hearts", 12);
+        Card QD = new Card("\uD83C\uDCCD", "Queen of Diamonds", 12);
+        Card QC = new Card("\uD83C\uDCDD", "Queen of Clubs", 12);
         deck.add(QS);
         deck.add(QH);
         deck.add(QD);
         deck.add(QC);
 
-        Card KS = new Card("\uD83C\uDCAD", "King of Spades", 13);
-        Card KH = new Card("\uD83C\uDCBD", "King of Hearts", 13);
-        Card KD = new Card("\uD83C\uDCCD", "King of Diamonds", 13);
-        Card KC = new Card("\uD83C\uDCDD", "King of Clubs", 13);
+        Card KS = new Card("\uD83C\uDCAE", "King of Spades", 13);
+        Card KH = new Card("\uD83C\uDCBE", "King of Hearts", 13);
+        Card KD = new Card("\uD83C\uDCCE", "King of Diamonds", 13);
+        Card KC = new Card("\uD83C\uDCDE", "King of Clubs", 13);
         deck.add(KS);
         deck.add(KH);
         deck.add(KD);
@@ -154,11 +154,17 @@ public class HelloApplication extends Application {
             Random rand = new Random();
             int cardSelectPlayer = rand.nextInt(deck.size());
             int cardSelectEnemy = rand.nextInt(deck.size());
-            playerDeck.add(deck.get(cardSelectPlayer));
-            deck.remove(cardSelectPlayer);
 
+            //loop to prevent overlapping indices
+            while(cardSelectPlayer == cardSelectEnemy){
+                cardSelectEnemy = rand.nextInt(deck.size());
+            }
+
+            playerDeck.add(deck.get(cardSelectPlayer));
             enemyDeck.add(deck.get(cardSelectEnemy));
-            deck.remove(cardSelectEnemy);
+
+            deck.remove(playerDeck.getLast());
+            deck.remove(enemyDeck.getLast());
 
         }
     }//end of assignCards
