@@ -4,4 +4,4 @@ This will be a very basic blackjack game written using XML. It will have a 5-dec
 Winning pays out 2x. Blackjack pays 2.5x. If the dealer shows an Ace or face card they automaticaly check their reserve. Should that reserve give the dealer 21 the player automatically loses.
 This game will not feature insurance, doubling down, or splitting... unless I'm feeling silly.
 
-Link for unicode playing cards: [https://www.compart.com/en/unicode/block/U+1F0A0](url)
+Link for unicode playing cards: https://www.compart.com/en/unicode/block/U+1F0A0
