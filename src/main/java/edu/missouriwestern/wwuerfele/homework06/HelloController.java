@@ -38,7 +38,7 @@ public class HelloController {
 
     @FXML
     private void onButtonClick() {
-        //pause(0.2);
+        pause(0.2);
 
         Label enemyLabel = new Label(enemyDeck.getFirst().getFace());
         enemyLabel.setStyle("-fx-font-size: 70px;");
