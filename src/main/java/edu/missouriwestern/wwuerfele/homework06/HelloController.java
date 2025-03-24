@@ -102,17 +102,27 @@ public class HelloController {
         }
 
 
-        if(playerDeck.isEmpty()){
+        if(playerDeck.isEmpty() && !enemyDeck.isEmpty()){
             Label headerLabel = new Label("YOU LOSE");
             headerLabel.setStyle("-fx-font-size: 100px;");
             header.getChildren().add(headerLabel);
             playerWarPile.getChildren().clear();
             attackButton.getChildren().clear();
         }
-        else if (enemyDeck.isEmpty()) {
+        else if (enemyDeck.isEmpty() && !playerDeck.isEmpty()) {
             Label headerLabel = new Label("ENEMY FELLED");
             headerLabel.setStyle("-fx-font-size: 100px;");
             header.getChildren().add(headerLabel);
+            enemyWarPile.getChildren().clear();
+            attackButton.getChildren().clear();
+        }
+        else if (enemyDeck.isEmpty() && playerDeck.isEmpty()){
+            Label headerLabel = new Label("Tie");
+            Label sunTzu = new Label("There is no instance of a nation benefiting from prolonged warfare.”\n" +
+                    "― Sun Tzu, The Art of War ");
+            headerLabel.setStyle("-fx-font-size: 100px;");
+            sunTzu.setStyle("\"-fx-font-size: 50px;\"");
+            header.getChildren().addAll(headerLabel, sunTzu);
             enemyWarPile.getChildren().clear();
             attackButton.getChildren().clear();
         }
